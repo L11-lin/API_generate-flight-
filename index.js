@@ -96,6 +96,10 @@ async function saveFlightToDB(flight) {
   }
 }
 
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok", service: "Cargo Flight Scheduler API", schedule: "Data saved every 6 hours to PostgreSQL" });
+});
+
 // route สำหรับดูข้อมูลเที่ยวบินล่าสุด
 app.get("/api/cargo-flights", async (req, res) => {
   try {
